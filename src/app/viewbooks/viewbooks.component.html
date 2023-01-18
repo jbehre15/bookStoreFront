@@ -1,0 +1,34 @@
+<div class="container">
+  <table class="table table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">name</th>
+      <th scope="col">author</th>
+      <th scope="col">releaseYear</th>
+      <th scope="col">Price</th>
+      <th scope="col">Actions</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngIf="books.length ==0">
+      <td colspan="5" style="text-align: center"><h2>There are no products yet</h2></td>
+    </tr>
+    <tr *ngFor="let book of books">
+      <th>{{book.id}}</th>
+      <td>{{book.name}}</td>
+      <td>{{book.author}}</td>
+      <td>{{book.releaseYear}}</td>
+      <td>{{book.price}}</td>
+      <td>
+      <button type="button" class="btn btn-danger" (click)="deletebook(book.id)">Delete</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<button type="button" class="btn btn-primary" (click)="RedirectToAddBook()">Add new Book</button>
+  <button type="button" class="btn btn-primary" (click)="RedirectToOldestBook()">Oldest Book</button>
+  <button type="button" class="btn btn-primary" (click)="RedirectToLatestBook()">Latest Book</button>
+
+</div>
